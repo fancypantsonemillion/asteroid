@@ -1,5 +1,6 @@
-import pygame 
-from logger import log_state
+import pygame
+import sys
+from logger import (log_state, log_event)
 from constants import *
 from player import *
 from asteroid import *
@@ -40,6 +41,12 @@ def main():
 
         #UPDATE phase
         updatable.update(dt)
+
+        for asteroid in asteroids:
+            if asteroid.collides_with(player):
+                log_event("player_hit")
+                print("Game over!")
+                sys.exit()
         
         #DRAW phase
         screen.fill("black")
