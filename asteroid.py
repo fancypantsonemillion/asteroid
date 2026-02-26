@@ -1,5 +1,5 @@
 import pygame
-frpm circleshape import CircleShape
+from circleshape import CircleShape
 from constants import LINE_WIDTH
 
 class Asteroid(CircleShape):
